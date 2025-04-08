@@ -1,5 +1,7 @@
 FROM ubuntu:22.04
 
+WORKDIR /app
+
 RUN apt-get update  \
     && apt-get -y upgrade \
     && apt-get install -y sudo ca-certificates curl gnupg \
@@ -37,7 +39,7 @@ COPY package.json .
 COPY entrypoint.sh .
 COPY episode.json .
 
-RUN chmod 777 /entrypoint.sh
+RUN chmod 777 /app/entrypoint.sh
 ENV LC_ALL=en_US.UTF-8
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "/app/entrypoint.sh" ]
