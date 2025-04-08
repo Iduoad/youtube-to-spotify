@@ -2,6 +2,6 @@
 
 pwd
 ls -al 
-echo "new test ohmagad"
+echo "I hate github container actions xD"
 cd /app
 npm start
